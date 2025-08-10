@@ -1,12 +1,17 @@
 import { Mail, Lock } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [data, setData] = useState({ email: "", password: "" });
-
+  const [response,setResponse]=useState();
+  const navigate=useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    alert("logins");
+    //do axios ty catchtes here
+     
+    //forwarding to the desired dashboard
+    navigate('/dash',{state:{role:response}})
   };
   const handleRegister = (e) => {
     e.preventDefault();
