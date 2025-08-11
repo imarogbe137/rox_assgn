@@ -1,10 +1,18 @@
 import { Router } from "express";
+import {
+  adminAdd,
+  adminLogin,
+  getListingData,
+  storeAdd,
+  userAdd,
+} from "../controllers/admin.controllers.js";
 
 const router = Router();
 
-router.route.post("/store-add", storeAdd);
-router.route.post("/user-add", userAdd);
-router.route.post("/admin-add", adminAdd);
-router.route.post("login", adminLogin);
+router.route("/store-add").post(storeAdd);
+router.route("/user-add").post(userAdd);
+router.route("/admin-add").post(adminAdd);
+router.route("/login").post(adminLogin);
+router.route("/login").get(getListingData);
 
-export { router };
+export default router;
